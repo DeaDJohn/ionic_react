@@ -15,10 +15,11 @@ type CardProps = {
 
 export interface IHeroe {}
 
+
 const CardMarvel: React.FC<CardProps> = (props) => {
 
     const [heroe, setHeroe] = useState<IHeroe | any>({});
-    const [heroeImage, setHeroeImage] = useState<IHeroe | any>({});
+    const [heroeImage, setHeroeImage] = useState<string>('../public/assets/marvel.png');
     const [cargando, guardarCargando] = useState(false);
 
     const getCharacterInfo = async () =>{
@@ -35,10 +36,7 @@ const CardMarvel: React.FC<CardProps> = (props) => {
             apikey: 'e250641ee1d462b8a2a5d68ad58e5869',
             hash: CryptoJS.MD5(timeStamp + 'dda24246421a52feec1dfc5c5db3b66a7b673bdd' + 'e250641ee1d462b8a2a5d68ad58e5869').toString(CryptoJS.enc.Hex)
         };
-        const resultado = await axios.get(url, { params: queryParams })
-
-        console.log(resultado.data.data.results[0]);
-        
+        const resultado = await axios.get(url, { params: queryParams })     
 
             guardarCargando(false);
             setHeroe(resultado.data.data.results[0]);

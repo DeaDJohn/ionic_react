@@ -7,18 +7,24 @@
     display: block;
 }
 
-.swiper-slide img {
-    margin-top: 0;
+ion-slides.swiper-container{
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
-
 ion-slide>h2 {
     margin-top: 0;
+    font-size: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
-
+ion-slide>p {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 ion-slide>img {
     max-height: 50%;
     max-width: 60%;
-    margin: 36px 0;
+    margin: 0 0 10px;
 }
 
 .swiper-container-horizontal>.swiper-pagination-bullets,
